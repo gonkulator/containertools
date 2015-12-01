@@ -15,8 +15,8 @@ type Cgroup struct {
 
 // String gives back a representation of a Cgroup in the form in which you
 //  would find it in /proc/<pid>/cgroups
-func (c Cgroup) String() {
-	fmt.Printf("%d:%s:%s", c.HierarchyID, c.Subsystems, c.GroupID)
+func (c Cgroup) String() string {
+	return fmt.Sprintf("%d:%s:%s", c.HierarchyID, c.Subsystems, c.GroupID)
 }
 
 // Parse takes a string (as if it came from /proc/<pid>/cgroups) and
