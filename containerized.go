@@ -6,15 +6,14 @@ package containertools
 //  If it has a non-nil result, you are only not in a container if the GroupID
 //  of every entry is "/".
 func Containerized() bool {
-  m,err := Containerpaths()
-  if err != nil || m == nil {
-    return false
-  }  
-  for _, v := range *m {
-    if v.GroupID != "/" {
-      return true
-    }
-  }
-  return false
+	m, err := Containerpaths()
+	if err != nil || m == nil {
+		return false
+	}
+	for _, v := range *m {
+		if v.GroupID != "/" {
+			return true
+		}
+	}
+	return false
 }
-
